@@ -42,7 +42,7 @@
 		<div class="login_left">
 			<ul>
 				<li class="li1 active"><a href="<%=ctx%>/ad/adPackage!toHbTemplateChoose.do">制作广告</a></li>
-				<li class="li2"><a href="<%=ctx%>/ad/adPackage!toReleaseAd.do">发布广告</a></li>
+				<li class="li2"><a href="<%=ctx%>/ad/adPackage!toReleaseAd.do">发布uighuiiuh广告</a></li>
 				<!--<li class="li3 active"><a href="#">发布审核</a></li>-->
 				<li class="li4"><a href="<%=ctx%>/ad/adPackage!toReleaseRecord.do">发布记录<span>未通过审核10</span></a></li>
 				<li class="li5"><a href="<%=ctx%>/ad/adPackage!toAdList.do">广告库</a></li>
