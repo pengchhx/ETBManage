@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+     http://www.springframework.org/schema/tx  
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
+     http://www.springframework.org/schema/aop  
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+     http://www.springframework.org/schema/context  
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="true">
+
+	<context:component-scan base-package="com.archermind.etb" />
+
+    <!--  
+	<context:property-placeholder location="classpath:config.properties" />
+    -->
+    <!-- config.properties 配置文件加密 -->
+	<bean id="environmentVariablesConfiguration"
+		class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">
+		<property name="algorithm" value="PBEWithMD5AndDES" />
+		<property name="password" value="password" />
+	</bean>
+	<bean id="configurationEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="environmentVariablesConfiguration" />
+	</bean>
+	<bean id="propertyConfigurer"
+		class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+		<constructor-arg ref="configurationEncryptor" />
+		<property name="locations">
+			<list>
+				<value>classpath:config.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding" value="utf-8" />
+	</bean> 
+
+	<!-- BoneCP configuration -->
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<!-- 设置jdbc驱动名称 -->
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<!-- 设置数据库访问URL -->
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<!-- 设置数据库用户名 -->
+		<property name="username" value="${jdbc.username}" />
+		<!-- 设置数据库密码 -->
+		<property name="password" value="${jdbc.password}" />
+		<!-- 设置测试connection的间隔时间（单位是分钟）  -->
+		<property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}" />
+		<!-- 设置connection的空闲存活时间（单位是分钟） -->
+		<property name="idleMaxAge" value="${jdbc.idleMaxAge}" />
+		<!-- 设置每个分区含有connection最大个数 -->
+		<property name="maxConnectionsPerPartition" value="${jdbc.maxConnectionsPerPartition}" />
+		<!-- 设置每个分区含有connection最大小个数 -->
+		<property name="minConnectionsPerPartition" value="${jdbc.minConnectionsPerPartition}" />
+		<!-- 设置分区个数 -->
+		<property name="partitionCount" value="${jdbc.partitionCount}" />
+		<!-- 设置分区中的connection增长数量 -->
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}" />
+		<!-- 设置connection助手线程个数 -->
+		<property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}" />
+		<!-- 设置连接池阀值 -->
+		<property name="poolAvailabilityThreshold" value="${jdbc.poolAvailabilityThreshold}"></property>
+		<!-- 设置获取connection超时的时间（单位毫秒） -->
+		<property name="connectionTimeout" value="${jdbc.connectionTimeout}"></property>
+		<!-- 设置statement助手线程个数 -->
+		<property name="statementReleaseHelperThreads" value="${jdbc.statementReleaseHelperThreads}"></property>
+		<!-- 设置connection的存活时间 -->
+		<property name="maxConnectionAge" value="${jdbc.maxConnectionAge}"></property>
+		<!-- 设置重新获取连接的次数 -->
+		<property name="acquireRetryAttempts" value="${jdbc.acquireRetryAttempts}"></property>
+		<!-- 设置重新获取连接的次数间隔时间（单位毫秒） -->
+		<property name="acquireRetryDelayInMs" value="${jdbc.acquireRetryDelayInMs}"></property>
+		<!-- 设置连接池初始化功能 -->
+		<property name="lazyInit" value="${jdbc.lazyInit}"></property>
+		<!-- 设置statement缓存个数 -->
+		<property name="statementsCacheSize" value="${jdbc.statementsCacheSize}"></property>
+		<!-- 设置是否关闭JMX功能 -->
+		<property name="disableJMX" value="${jdbc.disableJMX}"></property>
+		<!-- 设置连接池名字 -->
+		<property name="poolName" value="${jdbc.poolName}"></property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.archermind.etb.*.domain</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- 配置事务的传播特性 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="save*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="insert*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="update*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="modify*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="edit*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="del*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="remove*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="check*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="publish*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="unpublish*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="uncheck*" propagation="REQUIRED"
+				rollback-for="RuntimeException" />
+			<tx:method name="push*" propagation="REQUIRED" rollback-for="RuntimeException" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 那些类的哪些方法参与事务 -->
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="allServiceMethod"
+			expression="execution(* com.archermind.etb.*.service.*.*(..))" />
+		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="txAdvice" />
+	</aop:config>
+
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="filterChainDefinitions">
+			<value>
+				# some example chain definitions:
+				/user/Login!checkLogin.do = anon
+				/ad/adPackage!uploadAdPicCommon.do = anon
+				/ad/adPackage!modifyAdResource.do = anon
+				/uploads/** = anon
+				/images/** = anon
+				/css/** = anon
+				/js/** = anon
+				/** =authc
+				# more
+			</value>
+		</property>
+	</bean>
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!-- Single realm app. If you have multiple realms, use the 'realms' property 
+			instead. -->
+		<property name="realm" ref="etbRealm" />
+		<!-- By default the servlet container sessions will be used. Uncomment 
+			this line to use shiro's native sessions (see the JavaDoc for more): -->
+		<!-- <property name="sessionMode" value="native"/> -->
+	</bean>
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<!-- Define the Shiro Realm implementation you want to use to connect to 
+		your back-end -->
+	<!-- security datasource: -->
+	<bean id="etbRealm" class="com.archermind.etb.user.action.ServerAuthorizingRealm">
+	</bean>
+	<import resource="spring-redis.xml"/>
+</beans>  

@@ -1,0 +1,106 @@
+﻿.range_box{
+	width: 160px;
+	border-radius: 4px;
+	background: #a0a0a0;
+	height: 2px;
+	clear: both;
+	z-index: 1;
+
+}
+input[type=range] {
+	 
+	-webkit-appearance: none;
+	width: 160px;
+	height: 2px;
+	border-radius: 4px; /*这个属性设置使填充进度条时的图形为圆角*/
+	background: -webkit-linear-gradient(#fff, #fff) no-repeat;
+    cursor: pointer;
+	background-size: 0% 100%;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	height: 2px;
+	border-radius: 4px; /*将轨道设为圆角的*/
+	cursor: pointer;
+	/*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;*/ /*轨道内置阴影效果*/
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 10px;
+	width:  10px;
+	cursor: pointer;
+	margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+	background: #ffffff; 
+	border-radius: 50%; /*外观设置为圆形*/
+	border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+	box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+
+input[type=range]::-moz-range-track {
+	height: 2px;
+	border-radius: 4px;/*将轨道设为圆角的*/
+	/*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; *//*轨道内置阴影效果*/
+}
+
+input[type=range]::-moz-range-thumb {
+	appearance: none;
+	height: 10px;
+	width:  10px;
+	cursor: pointer;
+	margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+	background: #ffffff; 
+	border-radius: 50%; /*外观设置为圆形*/
+	border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+	box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+
+input[type=range]::-moz-range-progress {
+	background: linear-gradient(#fff, #fff) no-repeat;
+	height: 2px;
+	border-radius: 4px;
+}
+
+input[type=range]::-ms-track {
+	height: 2px;
+	border-radius: 4px;
+	/*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;*/
+	border-color: transparent; /*去除原有边框*/
+	color: transparent; /*去除轨道内的竖线*/
+}
+
+input[type=range]::-ms-thumb {
+	border: solid 0.125em rgba(205, 224, 230, 0.5);
+	height: 10px;
+	width:  10px;
+	border-radius: 50%;
+	background: #ffffff;
+	margin-top: -5px;
+	box-shadow: 0 .125em .125em #3b4547;
+}
+
+input[type=range]::-ms-fill-lower {
+	/*进度条已填充的部分*/
+	height: 2px;
+	border-radius: 4px;
+	background: linear-gradient(#fff, #fff) no-repeat;
+}
+
+input[type=range]::-ms-fill-upper {
+	/*进度条未填充的部分*/
+	height: 2px;
+	border-radius: 4px;
+	background: #ffffff;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+	background: linear-gradient(#fff, #fff) no-repeat;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+	background: #ffffff;
+}

@@ -1,0 +1,1086 @@
+@CHARSET "UTF-8";
+
+.pageContent label {
+	text-align: right;
+}
+
+label.alt {
+	text-align: left;
+	color: #7F7F7F;
+}
+
+/* .pageContent input,.pageContent select */
+input[type='text'],input[type='password'],select {
+	width: 180px;
+}
+
+.pageContent textarea {
+	width: 250px;
+	height: 100px;
+}
+
+.pageContent .adPackageTable textarea {
+	width: 250px;
+	height: 60px;
+}
+
+.pageFormContent label.textLabel {
+	padding-left: 0px;
+	text-align: left;
+	width: 250px;
+}
+
+.combox .select span {
+	width: 165px;
+	height: 21px;
+	padding: 0 3px;
+	line-height: 21px;
+	background: #F00;
+	color: #FFF;
+	margin-left: -59px;
+	display: inline-block;
+	position: absolute;
+	top: 84px;
+}
+
+.grid .gridHeader .gridThead table thead th {
+	text-align: center;
+}
+
+.pageFormContentAd {
+	display: block;
+	overflow: auto;
+	padding: 10px 5px;
+	position: relative;
+}
+
+.pageFormContentAd div.unit {
+	display: block;
+	margin: 0;
+	padding: 5px 0;
+	position: relative;
+	clear: both;
+}
+
+.pageFormContentAd p {
+	float: left;
+	display: block;
+	width: 380px;
+	height: 21px;
+	margin: 0;
+	padding: 5px 0;
+	position: relative;
+}
+
+.pageFormContentAd p.nowrap {
+	height: auto;
+	width: 100%
+}
+
+.pageFormContentAd .radioGroup {
+	float: left;
+	display: block;
+	overflow: hidden;
+}
+
+.pageFormContentAd label {
+	float: left;
+	width: 120px;
+	padding: 0 5px;
+	line-height: 21px;
+}
+
+.pageFormContentAd label.radioButton {
+	float: left;
+	width: auto;
+	padding: 0 10px 0 0;
+	line-height: 21px;
+}
+
+.pageFormContentAd .textInput {
+	float: left;
+}
+
+.pageFormContentAd select {
+	float: left;
+}
+
+.pageFormContentAd .inputInfo {
+	padding: 0 5px;
+	line-height: 21px;
+}
+
+.pageFormContentAd span.unit,.pageFormContentAd a.unit {
+	padding: 0 5px;
+	line-height: 21px;
+}
+
+.pageFormContentAd span.info {
+	color: #7F7F7F;
+	display: block;
+	line-height: 21px;
+	float: left;
+}
+
+.pageFormContentAd dl {
+	float: left;
+	display: block;
+	width: 380px;
+	height: 21px;
+	margin: 0;
+	padding: 5px 0;
+	position: relative;
+}
+
+.pageFormContentAd dt {
+	float: left;
+	width: 75px;
+	padding: 0 5px;
+	line-height: 21px;
+	text-align: right;
+}
+
+.pageFormContentAd dd {
+	display: block;
+	line-height: 21px;
+	width: 220px;
+	float: left;
+}
+
+.pageFormContentAd dl.nowrap,.nowrap dl {
+	width: 100%;
+	height: auto;
+	clear: both;
+}
+
+.pageFormContentAd dl.nowrap dd,.nowrap dd {
+	width: 400px;
+}
+
+.pageFormContentAd textarea {
+	width: 250px;
+	height: 60px;
+}
+
+.templateListdiv {
+	width: 100%;
+	height: 80%;
+	padding: 10px 5px 6px 5px;
+	margin-left: 5px;
+	border: 1px solid #fff;
+}
+
+.templateListHover {
+	width: 100%;
+	height: 80%;
+	padding: 10px 5px 6px 5px;
+	margin-left: 5px;
+	background-color: #F8F8F8;
+	border: 1px solid #B8D0D6;
+}
+
+a.inLine:link {
+	text-decoration: none;
+}
+
+a.inLine:HOVER {
+	border: 1px solid #99bbe8;
+	display: inline-block;
+	float: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btnPublish,.btnCheck,.btnUninstall,.btnView {
+	background-image: url("../themes/default/images/button/imgX.gif");
+	background-repeat: no-repeat;
+	display: inline-block;
+	float: none;
+	width: 18px;
+	height: 18px;
+}
+
+.btnPublish {
+	background-position: -1px -1px;
+}
+
+.btnCheck {
+	background-position: -139px -1px;
+}
+
+.btnUninstall {
+	background-position: -23px -1px;
+}
+
+.btnView {
+	background-position: -116px -1px;
+}
+
+.dialog_ctn {
+	display: none;
+}
+
+#BgDiv {
+	background-color: #e3e3e3;
+	position: absolute;
+	z-index: 95;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 60%;
+	opacity: 0.5;
+	filter: alpha(opacity =                             50);
+	-moz-opacity: 0.5;
+}
+
+#DialogDiv {
+	position: absolute;
+	width: 820px;
+	left: 40%;
+	height: auto;
+	z-index: 100;
+	background-color: #fff;
+	border: 1px #B8D0D6 solid;
+}
+
+#DialogDiv h2 {
+	height: 25px;
+	font-size: 12px;
+	background-image: url("../themes/default/images/grid/grid.png");
+	background-repeat: repeat-x;
+	position: relative;
+	padding-left: 10px;
+	line-height: 25px;
+	border-bottom: 1px #B8D0D6 solid;
+}
+
+#DialogDiv h2 a {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background-image: url("../themes/default/images/tabs/tabspage_icon.png");
+	background-repeat: no-repeat;
+	overflow: hidden;
+	width: 11px;
+	height: 11px;
+}
+
+#DialogDiv h2 a:hover {
+	background-position: 0 -50px;
+}
+
+#DialogDiv .form {
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	display: inline;
+	overflow: hidden;
+	float: left;
+}
+
+#vedioBgDiv {
+	background-color: #e3e3e3;
+	position: absolute;
+	z-index: 95;
+	left: 0;
+	top: 0;
+	display: none;
+	width: 100%;
+	height: 60%;
+	opacity: 0.5;
+	filter: alpha(opacity =                             50);
+	-moz-opacity: 0.5;
+}
+
+#vedioDialogDiv {
+	position: absolute;
+	width: 750px;
+	left: 20%;
+	height: auto;
+	z-index: 100;
+	/* 	background-color: #fff; */
+	background-color: rgb(0, 0, 0);
+	border: 1px #B8D0D6 solid;
+}
+
+#vedioDialogDiv h2 {
+	height: 25px;
+	font-size: 12px;
+	background-image: url("../themes/default/images/grid/grid.png");
+	background-repeat: repeat-x;
+	position: relative;
+	padding-left: 10px;
+	line-height: 25px;
+	border-bottom: 1px #B8D0D6 solid;
+}
+
+#vedioDialogDiv h2 a {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background-image: url("../themes/default/images/tabs/tabspage_icon.png");
+	background-repeat: no-repeat;
+	overflow: hidden;
+	width: 11px;
+	height: 11px;
+}
+
+#vedioDialogDiv h2 a:hover {
+	background-position: 0 -50px;
+}
+
+#vedioDialogDiv #video {
+	padding: 10px;
+	text-align: center;
+	position: relative;
+	display: inline;
+	overflow: hidden;
+	float: left;
+}
+
+.form .adDetail p {
+	float: left;
+	display: block;
+	width: 450px;
+	margin: 0;
+	padding: 6px 0 0 15px;
+	position: relative;
+	text-align: left;
+}
+
+.form .adDetail label {
+	padding: 0 5px;
+	text-align: left;
+	ord-wrap: break-word;
+	word-break: break-all;
+	float: left;
+}
+
+#DialogDiv .adDetail {
+	color: #ffffff;
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat;
+	overflow: hidden;
+	min-height: 70px;
+	padding-top: 15px;
+	position: absolute;
+	bottom: -300px;
+	left: 10px;
+	padding-bottom: 15px;
+}
+
+/* #DialogVedioDiv .vedioDetail {
+	color: #ffffff;
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat;
+	overflow: none;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	position: absolute;
+	left: 5px;
+	width:220px;
+	border: 1px solid;
+	border-color: #B8D0D6;
+	min-height: 70px;
+}
+
+.vedioDetail p {
+	float: left;
+	display: block;
+	width: 210px;
+	margin: 5px;
+	position: relative;
+}
+
+.vedioDetail p .vedioDsp {
+	width: 210px;
+}
+
+.vedioDetail label {
+	padding: 0 5px;
+	line-height: 15px;
+	text-align: left;
+	ord-wrap: break-word;
+	word-break: break-all;
+	float: left;
+} */
+
+#vedioDialogDiv .vedioDetail1 {
+	color: #ffffff;
+	background-color: rgb(0, 0, 0);
+	/* 	background-image: url("../themes/default/images/adcover.png"); */
+	/* 	background-repeat: repeat; */
+	overflow: none;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	position: absolute;
+	left: 10px;
+	width: 800px;
+	border: 1px solid;
+	border-color: #B8D0D6;
+	min-height: 70px;
+	margin-top: 620px;
+}
+
+.vedioDetail1 p {
+	float: left;
+	display: block;
+	width: 780px;
+	margin: 5px;
+	position: relative;
+}
+
+.vedioDetail1 p .vedioDsp1 {
+	width: 700px;
+}
+
+.vedioDetail1 label {
+	padding: 0 5px;
+	line-height: 15px;
+	text-align: left;
+	ord-wrap: break-word;
+	word-break: break-all;
+	float: left;
+}
+
+/*广告素材显示样式 start*/
+.pageFormContent .adPackageTable {
+	width: 98%;
+}
+
+.pageFormContent .adPackageTable p {
+	float: left;
+	display: block;
+	width: 450px;
+	height: 21px;
+	margin: 0;
+	padding: 5px 0;
+	position: relative;
+}
+
+.pageFormContent .adPackageTable label {
+	float: left;
+	width: 105px;
+	padding: 0 5px;
+	line-height: 21px;
+}
+
+/*单屏新增列表*/
+.pageFormContent .nav ul,li {
+	list-style: none;
+}
+
+.pageFormContent .nav li {
+	height: 183px;
+	line-height: 90px;
+	float: left;
+	margin: 15px 0 5px 20px;
+}
+
+.pageFormContent .nav {
+	width: 100%;
+	margin: 0 auto;
+}
+
+/*紧急广告*/
+.pageFormContent .navUrgencyList ul,li {
+	list-style: none;
+}
+
+.pageFormContent .navUrgencyList li {
+	height: 183px;
+	line-height: 90px;
+	float: left;
+	margin: 15px 0 5px 20px;
+}
+
+.pageFormContent .navUrgencyList {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.pageFormContent .navUrgency {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.pageFormContent .navUrgency li {
+	height: 183px;
+	line-height: 70px;
+	float: left;
+	margin: 15px 0 5px 20px;
+}
+
+.deleteImgDivUrgencyUpd {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	font-size: 10px;
+	display: none;
+	width: 121px;
+	height: 23px;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.btnDivUrgencyList {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 65px;
+	width: 45%;
+}
+
+.btnDivUrgencyList a {
+	color: #ffffff;
+	text-decoration: underline;
+	vertical-align: top;
+}
+
+.deleteImgDivUrgencyUpd {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	font-size: 10px;
+	display: none;
+	width: 121px;
+	height: 23px;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.btnDivUrgencyUpd {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 20px;
+	width: 75%;
+}
+
+.btnDivUrgencyUpd a {
+	color: #ffffff;
+	text-decoration: underline;
+	vertical-align: top;
+}
+
+.updPicUrgency a {
+	text-decoration: none;
+}
+
+.btnDivUrgencyList {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 65px;
+	width: 45%;
+}
+
+.btnDivUrgencyList a {
+	color: #ffffff;
+	text-decoration: underline;
+	vertical-align: top;
+}
+
+.listPicUrgency a {
+	text-decoration: none;
+}
+
+.opreaDivUrgencyUpdSetting {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	position: relative;
+	width: 121px;
+	height: 20px;
+	top: 180px;
+	z-index: 20;
+	padding-top: 4px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.resourceImgUrgency {
+	border: 1px solid;
+	border-color: #B8D0D6;
+	width: 120px;
+	height: 181px;
+	cursor: pointer;
+}
+
+/*单屏修改列表*/
+.pageFormContent .navCommonSingle {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.pageFormContent .navCommonSingle li {
+	height: 183px;
+/* 	height: 100%; */
+	line-height: 70px;
+	float: left;
+	margin: 15px 0 5px 16px;
+}
+
+/*单屏 删除图标等DIV样式  */
+.deleteImgDivSingleUpd {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	font-size: 10px;
+	display: none;
+	width: 121px;
+	height: 23px;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.btnDivSingleUpd {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 20px;
+	width: 75%;
+}
+
+.btnDivSingleUpd a {
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.btnDivSingleList {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 65px;
+	width: 45%;
+}
+
+.btnDivSingleList a {
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.btnDivSingleList a font {
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.opreaDivSingleUpdSetting {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	position: relative;
+	width: 121px;
+	height: 20px;
+	top: 180px;
+	z-index: 20;
+	padding-top: 4px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.playButtonDivSingleUpdSetting {
+	width: 60px;
+	height: 60px;
+	z-index: 21;
+	cursor: pointer;
+}
+
+.updPic a {
+	text-decoration: none;
+}
+
+.listPic a {
+	text-decoration: none;
+}
+
+/*双屏修改列表*/
+.pageFormContent .navCommonDouble {
+	width: 82%;
+	margin: 0 auto;
+}
+
+.pageFormContent .navCommonDouble li {
+	height: 122px;
+	line-height: 70px;
+	float: left;
+	margin: 15px 15px 5px 20px;
+}
+
+/*双屏新增列表*/
+.pageFormContent .navCommonDoubleList {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.pageFormContent .navCommonDoubleList li {
+	height: 122px;
+	line-height: 70px;
+	float: left;
+	margin: 15px 15px 5px 20px;
+}
+
+/*双屏删除图标等DIV样式*/
+.deleteImgDivDoubleUpd {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	font-size: 10px;
+	display: none;
+	width: 162px;
+	height: 23px;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.btnDivDoubleUpd {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 50px;
+	width: 75%;
+}
+
+.btnDivDoubleUpd a {
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.btnDivDoubleUpd a font {
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.btnDivDoubleList {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 100px;
+	width: 45%;
+}
+
+.btnDivDoubleList a {
+	color: #ffffff;
+	text-decoration: underline;
+	vertical-align: middle;
+}
+
+.btnDivDoubleList a font {
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.updPicUpper a {
+	text-decoration: none;
+}
+
+.listPicUpper a {
+	text-decoration: none;
+}
+
+.updPicLower a {
+	text-decoration: none;
+}
+
+.listPicLower a {
+	text-decoration: none;
+}
+
+.opreaDivDoubleUpdSetting {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	position: relative;
+	width: 162px;
+	height: 20px;
+	top: 180px;
+	z-index: 20;
+	padding-top: 4px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+/*应用修改列表*/
+.pageFormContent .navApp {
+	width: 90%;
+	margin: 0 0 0 75px;
+}
+
+.pageFormContent .navApp li {
+	height: 100px;
+	line-height: 70px;
+	float: left;
+	margin: 15px 30px 5px 40px;
+}
+
+/*应用新增列表*/
+.pageFormContent .navAppList {
+	width: 99%;
+}
+
+.pageFormContent .navAppList li {
+	height: 100px;
+	line-height: 70px;
+	float: left;
+	margin: 15px 50px 5px 20px;
+}
+
+/*应用广告*/
+.deleteImgDivAppUpd {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	font-size: 10px;
+	display: none;
+	width: 200px;
+	height: 23px;
+	color: #ffffff;
+	z-index: 2;
+}
+
+.btnDivAppUpd {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 85px;
+	width: 65%;
+}
+
+.btnDivAppUpd a {
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.btnDivAppUpd a font {
+	color: #ffffff;
+	vertical-align: top;
+}
+
+.btnDivAppList {
+	cursor: pointer;
+	padding-top: 4px;
+	padding-left: 130px;
+	width: 45%;
+}
+
+.btnDivAppList a {
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: top;
+}
+
+.opreaDivAppUpdSetting {
+	background-image: url("../themes/default/images/adcover.png");
+	background-repeat: repeat-x;
+	position: relative;
+	width: 200px;
+	height: 20px;
+	top: 180px;
+	z-index: 20;
+	padding-top: 4px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.td1 {
+	text-align: right;
+	padding-left: 20px;
+}
+
+.td2 {
+	text-align: left;
+}
+
+.adPackageTable td {
+	vertical-align: top
+}
+
+.btnAdModify {
+	margin-left: 42px
+}
+/* 素材DIV样式 */
+.picDiv {
+	text-align: center;
+	width: 150px;
+}
+
+.picDivView {
+	text-align: center;
+	width: 140px;
+}
+
+.picDivUrgency {
+	text-align: center;
+	width: 150px;
+}
+/*广告素材显示样式 end*/
+.deleteImgDiv {
+	position: relative;
+	z-index: 2;
+	top: 24px;
+	left: 50px;
+}
+
+/* 删除图标样式 */
+.deleteImg {
+	position: relative;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+}
+
+/* 素材样式设定 start */
+.resourceImgSingle {
+	border: 1px solid;
+	border-color: #B8D0D6;
+	width: 120px;
+	height: 181px;
+	cursor: pointer;
+}
+
+.resourceImgApp {
+	border: 1px solid;
+	border-color: #B8D0D6;
+	width: 198px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.resourceImgDouble {
+	border: 1px solid;
+	border-color: #B8D0D6;
+	width: 161px;
+	height: 122px;
+	cursor: pointer;
+}
+
+.resourceImgSelected {
+	border: 2px solid;
+	border-color: #03ebf0;
+}
+
+
+/* 素材样式设定 end */
+.titleBar {
+	background-image: url("../themes/default/images/titleBar.png");
+	background-repeat: repeat-x;
+	padding-bottom: 5px;
+	height: 33px;
+}
+
+.titleTd {
+	padding-left: 20px;
+	text-align: left;
+	padding-bottom: 9px;
+	padding-top: 9px;
+}
+
+/* .adPackageTable span.error { display:block;
+	overflow: hidden;
+	display: block;
+	width: 155px;
+	height: 21px;
+	line-height: 21px;
+	margin-left: 0px;
+	padding: 0 3px;
+	background: #F00;
+	color: #FFF;
+	z-index: 99;
+	position: absolute;
+	top: 6px;
+	left: 322px;
+} */
+
+.wordMsg span.error { /* display:block; */
+	overflow: hidden;
+	display: block;
+	width: 155px;
+	height: 21px;
+	line-height: 21px;
+	margin-left: 122px;
+	padding: 0 3px;
+	background: #F00;
+	color: #FFF;
+	z-index: 99;
+	position: absolute;
+	top: 50px;
+	left: 645px;
+}
+.pageFormContent .adPackageTable p.wordMsg{
+	height:auto;
+}
+.splitBorder {
+	border: 1px solid;
+	size: 1;
+	border-color: #99bbe8;
+	margin-left: 15px;
+}
+
+.appinfoReadSpan {
+	line-height: 21px;
+}
+
+.btnArea {
+	margin-left: 85%;
+}
+
+.btnArea li {
+	float: left;
+	margin: 0 0 15px 5px;
+}
+
+.btnAreaUrgency {
+	margin-left: 78%;
+}
+
+.btnAreaUrgency li {
+	float: left;
+	margin: 0 0 15px 5px;
+}
+label + textarea + span.error{
+	background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    margin-left: 70px;
+    padding: 0 3px;
+    position: absolute;
+    top: 90px;
+    width: 165px;}
+dd #menuInfoForm_menuInfo_menuInfoTips + span.error{
+	background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    margin-left: 70px;
+    padding: 0 3px;
+    position: absolute;
+    top: 90px;
+    width: 165px;}
+dd #adAppForm_adPackage_adPackageTips + span.error{
+	background: none repeat scroll 0 0 #FF0000;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+   margin-left: 30px;
+    padding: 0 3px;
+    position: absolute;
+    top: 50px;
+    width: 165px;}
+dd textarea.class + span.error{
+	left:360px;
+	top:50px;
+}
+dd textarea#msgNote + span.error{
+	left:395px;
+}
+textarea#adAppForm_adPackage_adPackageTips + span.error{
+	left:360px;
+	top:50px;
+}
+dd.adj input#adPackageBatchNo + span.error{
+	left:333px;
+}
+textarea#adCommonForm_adPackage_adPackageTips + span.error{
+	left:395px;
+}
+p#messageNoteUrgencyModify textarea#msgNoteUrgencyModify + span.error{
+	left:392px;
+	top:50px;
+}
+p.tipsHalfP label + textarea + span.error{
+	top: 50px;
+    left: 310px;
+}

@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+.progress{
+	width:160px;
+	height:4px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	-webkit-border-radius:5px;
+	float:left;
+	margin-left:26px;
+	margin-top:18px;
+	}
+.BarControl{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	display:inline-block;
+	}
+.TheBar{
+	position:relative;
+	width:160px;
+	background:#a0a0a0;
+	height:4px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	overflow:visible;
+	display:inline-block;
+	vertical-align:middle;
+	padding:0px;
+	}
+.TheColorBar{
+	width:0px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-ms-border-radius:5px;
+	-o-border-radius:5px;
+	height:100%;
+	background:#fff;
+	float:left;
+	}
+.TimeBall{
+	width:10px;
+	height:10px;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+	background:#fff;
+	position:absolute;
+	left:0px;
+	top:-3px;
+	z-index:2;
+	cursor:pointer;
+	}

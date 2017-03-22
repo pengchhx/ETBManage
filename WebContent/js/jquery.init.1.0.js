@@ -1,0 +1,8 @@
+/*INIT PAGE */
+$(function(){
+  
+  /*TOP*/
+  
+
+
+});
