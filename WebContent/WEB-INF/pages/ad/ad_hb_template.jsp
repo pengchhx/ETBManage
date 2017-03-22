@@ -75,8 +75,9 @@
 							<form action="">
 								<strong class="clearfix">
 									<label for="">分辨率:</label>
-									<select name="" id="">
-										<option value=""></option>
+									<select name="" id="fbl" onchange="getTemplitByFbl()">
+										<option value="1200*900">1200*900</option>
+										<option value="1200*1000">1200*1000</option>
 									</select>
 								</strong>
 							</form>
@@ -1479,8 +1480,8 @@
 							$($(".zzbj_btns_con")[0]).html("<span class='active'>区块1</span>");
 						}
 					}else{
-						$($(".block_content")[0]).html("<div class='block_left ui-widget-left ui-widget-content resizable1' style='width: 270px;'>区块1</div>" +
-							"<div class='block_left ui-widget-left ui-widget-content resizable1' style='width: 270px;'>区块2</div>");
+						$($(".block_content")[0]).html("<div id='qk1' class='block_left ui-widget-left ui-widget-content resizable1' style='width: 270px;'>区块1</div>" +
+							"<div id='qk2'  class='block_left ui-widget-right ui-widget-content resizable2' style='width: 270px;'>区块2</div>");
 						$($(".zzbj_btns_con")[0]).html("<span class='active'>区块1</span><span>区块2</span>");
 					}
 
@@ -1894,9 +1895,21 @@
 						$(".sc_con.active").parent().remove();
 					}
 				});
-				
 				//前移
 				$(".down_btn").click(function(e) {
+					if($(".sc_con").hasClass("active")){
+						$(".sc_con.active").parent().prev().before($(".sc_con.active").parent());
+					}
+				});
+				
+				//后移
+				$(".up_btn").click(function(e) {
+					if($(".sc_con").hasClass("active")){
+						$(".sc_con.active").parent().next().after($(".sc_con.active").parent());
+					}
+				});
+				//前移
+				$(".down_btn1").click(function(e) {
 					if($(".sc_con").hasClass("active")){
 						var oldNumber = $(".sc_con.active").find("span").text();
 						var newNumbet = $(".sc_con.active").parent().prev().find(".set_con").children("span").text();
@@ -1913,7 +1926,7 @@
 				});
 				
 				//后移
-				$(".up_btn").click(function(e) {
+				$(".up_btn1").click(function(e) {
 					if($(".sc_con").hasClass("active")){
 						var oldNumber = $(".sc_con.active").find("span").text();
 						var newNumbet = $(".sc_con.active").parent().next().find(".set_con").children("span").text();
@@ -2364,6 +2377,34 @@
 						}
 					}
 				})
+			}
+			function  getTemplitByFbl(){
+				
+				var fbl=$('#fbl option:selected') .val();
+				alert(fbl);
+				var horiLi = "";
+				$.ajax({
+					url: "<%=ctx %>/ad/adPackage!getTemplateList.do?fbl="+fbl,
+					cache : false,
+					type: "POST",
+					async: false,
+					data: "templateType=1",
+					success: function(data){
+						horiLi = eval(data);
+					}
+				});
+				var hori_li_html = "";
+				for(var i = 0; i < horiLi.length; i ++){
+					hori_li_html += "<li>" +
+										 "<img src='" + horiLi[i].path + "'>" +
+										 "<div class='shade_content clearfix'>" +
+										 	"<input type='hidden' id='areaCount' value='" + horiLi[i].areaCount + "' />" +
+										 	"<input type='hidden' id='adTemplateId' value='" + horiLi[i].tempId + "' />" +
+										 	"<img class='ok_icon' src='<%=ctx %>/images/ok.png'>" +
+										 "</div>" +
+							   		"</li>";
+				}
+				$(".hori_li ul").html(hori_li_html);
 			}
 	</script>
 </body>
